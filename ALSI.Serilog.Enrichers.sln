@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1F1791AD-D7E3-4368-9F2E-9C4A70C539AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALSI.Serilog.Enrichers", "src\ALSI.Serilog.Enrichers.csproj", "{8418E9A5-AB10-4B03-B4B7-F589B96F8D29}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7794A24D-85E3-4E00-887B-3A3615602CE8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "unit", "unit", "{E836FE4F-1620-498A-AE73-5584A133417A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALSI.Serilog.Enrichers.UnitTests", "tests\unit\ALSI.Serilog.Enrichers.UnitTests.csproj", "{402824FE-8976-4042-A86A-666B9A3EF029}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{286A79CE-C6B5-422E-A771-85D6E134BED7}"
+	ProjectSection(SolutionItems) = preProject
+		.csharpierrc = .csharpierrc
+		.gitignore = .gitignore
+		.globalconfig = .globalconfig
+		CONTRIBUTING.md = CONTRIBUTING.md
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+		LICENCE = LICENCE
+		README.md = README.md
+		stylecop.json = stylecop.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8418E9A5-AB10-4B03-B4B7-F589B96F8D29} = {1F1791AD-D7E3-4368-9F2E-9C4A70C539AD}
+		{E836FE4F-1620-498A-AE73-5584A133417A} = {7794A24D-85E3-4E00-887B-3A3615602CE8}
+		{402824FE-8976-4042-A86A-666B9A3EF029} = {E836FE4F-1620-498A-AE73-5584A133417A}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8418E9A5-AB10-4B03-B4B7-F589B96F8D29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8418E9A5-AB10-4B03-B4B7-F589B96F8D29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8418E9A5-AB10-4B03-B4B7-F589B96F8D29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8418E9A5-AB10-4B03-B4B7-F589B96F8D29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{402824FE-8976-4042-A86A-666B9A3EF029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{402824FE-8976-4042-A86A-666B9A3EF029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{402824FE-8976-4042-A86A-666B9A3EF029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{402824FE-8976-4042-A86A-666B9A3EF029}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
