@@ -3,13 +3,16 @@ using Serilog.Events;
 
 namespace ALSI.Serilog.Enrichers.UnitTests;
 
-public class ConcreteLogEventPropertyValue(object? value) : LogEventPropertyValue
+public class ConcreteLogEventPropertyValue : LogEventPropertyValue
 {
-    public object? Value { get; } = value;
-
-    public override void Render(TextWriter output, string? format = null, IFormatProvider? formatProvider = null)
+    public ConcreteLogEventPropertyValue(object? value)
     {
+        Value = value;
     }
+
+    public object? Value { get; init; }
+
+    public override void Render(TextWriter output, string? format = null, IFormatProvider? formatProvider = null) { }
 }
 
 public class LogEventPropertyFactory : ILogEventPropertyFactory

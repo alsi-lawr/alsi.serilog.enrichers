@@ -4,7 +4,7 @@ using Serilog.Events;
 
 namespace ALSI.Serilog.Enrichers.UnitTests;
 
-public class DropPropertyEnricherTests 
+public class DropPropertyEnricherTests
 {
     [Fact]
     public void WhenPropertyExists_ThenDropsProperty()
@@ -12,8 +12,14 @@ public class DropPropertyEnricherTests
         // Arrange
         var enricher = new DropPropertyEnricher("my_property");
         var myProperty = new LogEventProperty("my_property", new ScalarValue(42));
-        var logEvent = new LogEvent(DateTimeOffset.Now, LogEventLevel.Fatal, null, MessageTemplate.Empty, [myProperty]);
-        
+        var logEvent = new LogEvent(
+            DateTimeOffset.Now,
+            LogEventLevel.Fatal,
+            null,
+            MessageTemplate.Empty,
+            new List<LogEventProperty>() { myProperty }
+        );
+
         // Act
         enricher.Enrich(logEvent, new LogEventPropertyFactory());
 
@@ -26,15 +32,21 @@ public class DropPropertyEnricherTests
     {
         // Arrange
         var enricher = new DropPropertyEnricher("my_property");
-        var logEvent = new LogEvent(DateTimeOffset.Now, LogEventLevel.Fatal, null, MessageTemplate.Empty, []);
+        var logEvent = new LogEvent(
+            DateTimeOffset.Now,
+            LogEventLevel.Fatal,
+            null,
+            MessageTemplate.Empty,
+            new List<LogEventProperty>()
+        );
 
         // Act
         var enrichmentAction = () => enricher.Enrich(logEvent, new LogEventPropertyFactory());
 
         // Assert
         enrichmentAction.Should().NotThrow();
-    }   
-    
+    }
+
     [Fact]
     public void WhenOtherPropertyAlsoExists_ThenDropsOnlyProperty()
     {
@@ -42,8 +54,14 @@ public class DropPropertyEnricherTests
         var enricher = new DropPropertyEnricher("my_property");
         var myProperty = new LogEventProperty("my_property", new ScalarValue(42));
         var otherProperty = new LogEventProperty("other_property", new ScalarValue(42));
-        var logEvent = new LogEvent(DateTimeOffset.Now, LogEventLevel.Fatal, null, MessageTemplate.Empty, [myProperty, otherProperty]);
-        
+        var logEvent = new LogEvent(
+            DateTimeOffset.Now,
+            LogEventLevel.Fatal,
+            null,
+            MessageTemplate.Empty,
+            new List<LogEventProperty>() { myProperty, otherProperty }
+        );
+
         // Act
         enricher.Enrich(logEvent, new LogEventPropertyFactory());
 
